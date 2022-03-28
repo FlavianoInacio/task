@@ -33,18 +33,15 @@ android {
 }
 
 dependencies {
-    implementation ("androidx.core:core-ktx:1.7.0")
-    implementation ("androidx.appcompat:appcompat:1.4.1")
-    implementation ("com.google.android.material:material:1.5.0")
-    implementation ("androidx.constraintlayout:constraintlayout:2.1.3")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    implementation(Libraries.AndroidX.CORE)
+    implementation(Libraries.AndroidX.View.APP_COMPACT)
+    implementation(Libraries.Google.MATERIAL)
+    implementation(Libraries.AndroidX.View.CONSTRAINT_LAYOUT)
+    testImplementation(Libraries.Test.JUNIT)
+    androidTestImplementation(Libraries.Test.EXT)
+    androidTestImplementation(Libraries.Test.ESPRESSO)
 
-
-    val koin_version =  "3.2.0-beta-1"
-    // Koin for Kotlin apps
-    implementation ("io.insert-koin:koin-core:$koin_version")
-    // Testing
-    implementation ("io.insert-koin:koin-test:$koin_version")
+    // Koin
+    implementation(Libraries.Koin.KOIN)
+    implementation(Libraries.Koin.KOIN_TEST)
 }

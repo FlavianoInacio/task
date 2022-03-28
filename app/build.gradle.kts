@@ -1,19 +1,19 @@
 plugins {
-    id ("com.android.application")
-    id ("org.jetbrains.kotlin.android")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    compileSdk = 32
+    compileSdk = Application.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.flaviano.task_app"
-        minSdk = 26
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Application.ID
+        minSdk = Application.MIN_SDK
+        targetSdk = Application.TARGET_SDK
+        versionCode = Application.VERSION_CODE
+        versionName = Application.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Application.INSTRUMENTATION_RUNNER
     }
 
     buildTypes {
@@ -27,7 +27,7 @@ android {
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility =  JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -36,22 +36,20 @@ android {
 
 dependencies {
 
-    implementation (project(":infrastructure:domain"))
-    implementation (project(":infrastructure:data"))
-    implementation (project(":infrastructure:desing_system"))
+    // add project
+    implementation(project(Project.Dir.DOMAIN))
+    implementation(project(Project.Dir.DATA))
+    implementation(project(Project.Dir.DESIGN_SYSTEM))
 
-    implementation ("androidx.core:core-ktx:1.7.0")
-    implementation ("androidx.appcompat:appcompat:1.4.1")
-    implementation ("com.google.android.material:material:1.5.0")
-    implementation ("androidx.constraintlayout:constraintlayout:2.1.3")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    implementation(Libraries.AndroidX.CORE)
+    implementation(Libraries.AndroidX.View.APP_COMPACT)
+    implementation(Libraries.Google.MATERIAL)
+    implementation(Libraries.AndroidX.View.CONSTRAINT_LAYOUT)
+    testImplementation(Libraries.Test.JUNIT)
+    androidTestImplementation(Libraries.Test.EXT)
+    androidTestImplementation(Libraries.Test.ESPRESSO)
 
-
-    val koin_version =  "3.2.0-beta-1"
-    // Koin for Kotlin apps
-    implementation ("io.insert-koin:koin-core:$koin_version")
-    // Testing
-    implementation ("io.insert-koin:koin-test:$koin_version")
+    // Koin
+    implementation(Libraries.Koin.KOIN)
+    implementation(Libraries.Koin.KOIN_TEST)
 }

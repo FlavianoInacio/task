@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Task_App"
+rootProject.name = "TaskApp"
 include (":app")
 include (":infrastructure")
 include (":infrastructure:domain")
