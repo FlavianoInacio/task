@@ -13,8 +13,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Task_App"
-include ':app'
-include ':infrastructure'
-include ':infrastructure:domain'
-include ':infrastructure:data'
-include ':infrastructure:desing_system'
+include (":app")
+include (":infrastructure")
+include (":infrastructure:domain")
+include (":infrastructure:data")
+include (":infrastructure:desing_system")
