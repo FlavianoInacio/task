@@ -1,19 +1,18 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id (Plugins.ANDROID_LIBRARY)
+    id (Plugins.KOTLIN)
 }
 
 
 android {
-    compileSdk = 32
+    compileSdk =  Application.SDK.COMPILE_SDK
 
     defaultConfig {
-        minSdk = 26
-        targetSdk = 32
+        minSdk = Application.SDK.MIN_SDK
+        targetSdk=  Application.SDK.TARGET_SDK
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Application.TEST.INSTRUMENTATION_RUNNER
     }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -24,11 +23,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 

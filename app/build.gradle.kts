@@ -1,19 +1,19 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.ANDROID_APPLICATION)
+    id(Plugins.KOTLIN)
 }
 
 android {
-    compileSdk = Application.COMPILE_SDK
+    compileSdk = Application.SDK.COMPILE_SDK
 
     defaultConfig {
         applicationId = Application.ID
-        minSdk = Application.MIN_SDK
-        targetSdk = Application.TARGET_SDK
-        versionCode = Application.VERSION_CODE
-        versionName = Application.VERSION_NAME
+        minSdk = Application.SDK.MIN_SDK
+        targetSdk = Application.SDK.TARGET_SDK
+        versionCode = Application.VERSION.VERSION_CODE
+        versionName = Application.VERSION.VERSION_NAME
 
-        testInstrumentationRunner = Application.INSTRUMENTATION_RUNNER
+        testInstrumentationRunner = Application.TEST.INSTRUMENTATION_RUNNER
     }
 
     buildTypes {
@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
