@@ -5,9 +5,13 @@ object Libraries {
 
         // Koin for Kotlin apps
         const val KOIN = "io.insert-koin:koin-core:$VERSION"
+        const val KOIN_ANDROID = "io.insert-koin:koin-android:$VERSION"
 
         // Testing
-        const val KOIN_TEST = "io.insert-koin:koin-test:$VERSION"
+        object Test {
+            const val KOIN = "io.insert-koin:koin-test:$VERSION"
+            const val KOIN_JUNIT = "io.insert-koin:koin-test-junit4:$VERSION"
+        }
     }
 
     object AndroidX {
@@ -22,10 +26,15 @@ object Libraries {
     object Google {
         const val MATERIAL = "com.google.android.material:material:1.5.0"
     }
+
     object Test {
         const val JUNIT = "junit:junit:4.13.2"
         const val EXT = "androidx.test.ext:junit:1.1.3"
         const val ESPRESSO = "androidx.test.espresso:espresso-core:3.4.0"
+    }
+
+    object Util {
+        const val LOG_CAT = "com.squareup.logcat:logcat:0.1"
     }
 
 }

@@ -1,15 +1,15 @@
 plugins {
-    id (Plugins.ANDROID_LIBRARY)
-    id (Plugins.KOTLIN)
+    id(Plugins.ANDROID_LIBRARY)
+    id(Plugins.KOTLIN)
 }
 
 
 android {
-    compileSdk =  Application.SDK.COMPILE_SDK
+    compileSdk = Application.SDK.COMPILE_SDK
 
     defaultConfig {
         minSdk = Application.SDK.MIN_SDK
-        targetSdk=  Application.SDK.TARGET_SDK
+        targetSdk = Application.SDK.TARGET_SDK
 
         testInstrumentationRunner = Application.TEST.INSTRUMENTATION_RUNNER
     }
@@ -33,6 +33,10 @@ android {
 }
 
 dependencies {
+    // project
+    implementation(project(Project.Dir.DOMAIN))
+
+    implementation(Libraries.Util.LOG_CAT)
     implementation(Libraries.AndroidX.CORE)
     implementation(Libraries.AndroidX.View.APP_COMPACT)
     implementation(Libraries.Google.MATERIAL)
@@ -42,6 +46,8 @@ dependencies {
     androidTestImplementation(Libraries.Test.ESPRESSO)
 
     // Koin
-    implementation(Libraries.Koin.KOIN)
-    implementation(Libraries.Koin.KOIN_TEST)
+    api(Libraries.Koin.KOIN)
+    api(Libraries.Koin.KOIN_ANDROID)
+    androidTestImplementation(Libraries.Koin.Test.KOIN)
+    androidTestImplementation(Libraries.Koin.Test.KOIN_JUNIT)
 }

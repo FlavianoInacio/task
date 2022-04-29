@@ -51,5 +51,5 @@ dependencies {
 
     // Koin
     implementation(Libraries.Koin.KOIN)
-    implementation(Libraries.Koin.KOIN_TEST)
+    implementation(Libraries.Koin.Test.KOIN_JUNIT)
 }

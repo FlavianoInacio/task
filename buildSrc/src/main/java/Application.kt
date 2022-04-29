@@ -6,7 +6,7 @@ object Application {
 
     object SDK {
         const val COMPILE_SDK = 32
-        const val MIN_SDK = 26
+        const val MIN_SDK = 27
         const val TARGET_SDK = 32
     }
 
