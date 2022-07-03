@@ -40,16 +40,11 @@ dependencies {
     implementation(project(Project.Dir.DOMAIN))
     implementation(project(Project.Dir.DATA))
     implementation(project(Project.Dir.DESIGN_SYSTEM))
+    implementation(project(Project.Dir.COMMON))
 
-    implementation(Libraries.AndroidX.CORE)
-    implementation(Libraries.AndroidX.View.APP_COMPACT)
-    implementation(Libraries.Google.MATERIAL)
-    implementation(Libraries.AndroidX.View.CONSTRAINT_LAYOUT)
+
     testImplementation(Libraries.Test.JUNIT)
     androidTestImplementation(Libraries.Test.EXT)
     androidTestImplementation(Libraries.Test.ESPRESSO)
 
-    // Koin
-    implementation(Libraries.Koin.KOIN)
-    implementation(Libraries.Koin.Test.KOIN_JUNIT)
 }

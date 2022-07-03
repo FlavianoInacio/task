@@ -35,19 +35,12 @@ android {
 dependencies {
     // project
     implementation(project(Project.Dir.DOMAIN))
+    implementation(project(Project.Dir.COMMON))
 
-    implementation(Libraries.Util.LOG_CAT)
-    implementation(Libraries.AndroidX.CORE)
-    implementation(Libraries.AndroidX.View.APP_COMPACT)
-    implementation(Libraries.Google.MATERIAL)
-    implementation(Libraries.AndroidX.View.CONSTRAINT_LAYOUT)
     testImplementation(Libraries.Test.JUNIT)
     androidTestImplementation(Libraries.Test.EXT)
     androidTestImplementation(Libraries.Test.ESPRESSO)
 
-    // Koin
-    api(Libraries.Koin.KOIN)
-    api(Libraries.Koin.KOIN_ANDROID)
-    androidTestImplementation(Libraries.Koin.Test.KOIN)
     androidTestImplementation(Libraries.Koin.Test.KOIN_JUNIT)
+    androidTestImplementation(Libraries.Koin.Test.KOIN)
 }
