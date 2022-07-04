@@ -21,6 +21,12 @@ object Libraries {
             const val APP_COMPACT = "androidx.appcompat:appcompat:1.4.1"
             const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.3"
         }
+
+        object Room{
+            private const val VERSION = "2.4.1"
+            const val ROOM_RUNTIME = "androidx.room:room-runtime:$VERSION"
+            const val ROOM_COMPILER = "androidx.room:room-compiler:$VERSION"
+        }
     }
 
     object Google {

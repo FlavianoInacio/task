@@ -1,6 +1,8 @@
+
 plugins {
     id(Plugins.ANDROID_LIBRARY)
     id(Plugins.KOTLIN)
+    id(Plugins.KOTLIN_CAPT)
 }
 
 
@@ -43,4 +45,8 @@ dependencies {
 
     androidTestImplementation(Libraries.Koin.Test.KOIN_JUNIT)
     androidTestImplementation(Libraries.Koin.Test.KOIN)
+
+    // Room
+    implementation(Libraries.AndroidX.Room.ROOM_RUNTIME)
+    kapt(Libraries.AndroidX.Room.ROOM_COMPILER)
 }
