@@ -8,6 +8,9 @@ import com.flaviano.task.domain.model.TaskStatus
 import com.flaviano.task.domain.model.TaskType
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
+import org.amshove.kluent.shouldBeEqualTo
+import org.amshove.kluent.shouldBeTrue
+import org.amshove.kluent.shouldNotBeEmpty
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,9 +33,9 @@ class TaskRepositoryImplTest : BaseTest() {
         val test = taskRepository.getAll()
 
         // then
-        assertTrue(test.isSuccess)
-        assertTrue(test.getOrThrow().isNotEmpty())
-        assertTrue(test.getOrThrow().size == list.size)
+        test.isSuccess.shouldBeTrue()
+        test.getOrThrow().shouldNotBeEmpty()
+        test.getOrThrow().size shouldBeEqualTo list.size
 
     }
 
