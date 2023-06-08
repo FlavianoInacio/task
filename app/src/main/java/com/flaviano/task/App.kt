@@ -1,6 +1,7 @@
 package com.flaviano.task
 
 import android.app.Application
+import com.flaviano.task.data.di.DataModule
 import com.flaviano.task.di.ModuleDI
 import org.koin.core.context.startKoin
 
@@ -10,6 +11,7 @@ class App : Application() {
         super.onCreate()
         startKoin {
             ModuleDI.modules
+            DataModule.modules
         }
     }
 }
