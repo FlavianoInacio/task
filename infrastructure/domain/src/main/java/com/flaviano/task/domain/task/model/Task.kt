@@ -1,4 +1,4 @@
-package com.flaviano.task.data.task.model
+package com.flaviano.task.domain.task.model
 
 import java.time.Instant
 

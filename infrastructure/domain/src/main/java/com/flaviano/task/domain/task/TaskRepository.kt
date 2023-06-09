@@ -1,7 +1,7 @@
-package com.flaviano.task.data.task
+package com.flaviano.task.domain.task
 
-import com.flaviano.task.data.task.model.Task
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.Task
+import com.flaviano.task.domain.task.model.TaskType
 
 
 interface TaskRepository {

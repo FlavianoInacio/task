@@ -1,4 +1,4 @@
-package com.flaviano.task.data.task.model
+package com.flaviano.task.domain.task.model
 
 enum class TaskType(val id: Int) {
     STUDY(1), WORK(2), SPORT(3), LEISURE(4), BUY(5);

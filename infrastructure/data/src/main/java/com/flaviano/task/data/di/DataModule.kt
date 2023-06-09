@@ -1,7 +1,7 @@
 package com.flaviano.task.data.di
 
 import com.flaviano.task.data.database.Database
-import com.flaviano.task.data.task.TaskRepository
+import com.flaviano.task.domain.task.TaskRepository
 import com.flaviano.task.data.task.TaskRepositoryImpl
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module

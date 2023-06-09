@@ -3,8 +3,9 @@ package com.flaviano.task.data.task
 import com.flaviano.task.data.task.datasource.TaskLocalDataSource
 import com.flaviano.task.data.task.mapper.toDomain
 import com.flaviano.task.data.task.mapper.toEntity
-import com.flaviano.task.data.task.model.Task
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.TaskRepository
+import com.flaviano.task.domain.task.model.Task
+import com.flaviano.task.domain.task.model.TaskType
 
 class TaskRepositoryImpl(private val taskLocalDataSource: TaskLocalDataSource) :
     TaskRepository {

@@ -2,10 +2,10 @@ package com.flaviano.task.data.database.converter
 
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import com.flaviano.task.data.task.model.TaskPriority
-import com.flaviano.task.data.task.model.TaskProgress
-import com.flaviano.task.data.task.model.TaskStatus
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.TaskPriority
+import com.flaviano.task.domain.task.model.TaskProgress
+import com.flaviano.task.domain.task.model.TaskStatus
+import com.flaviano.task.domain.task.model.TaskType
 
 @ProvidedTypeConverter
 class EnumTypeConverter {

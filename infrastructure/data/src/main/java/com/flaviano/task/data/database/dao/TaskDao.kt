@@ -3,7 +3,7 @@ package com.flaviano.task.data.database.dao
 import androidx.room.Dao
 import androidx.room.Query
 import com.flaviano.task.data.database.entity.TaskEntity
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.TaskType
 
 @Dao
 abstract class TaskDao : BaseDao<TaskEntity> {

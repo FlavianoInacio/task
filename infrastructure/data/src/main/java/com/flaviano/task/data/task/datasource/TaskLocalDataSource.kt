@@ -2,7 +2,7 @@ package com.flaviano.task.data.task.datasource
 
 import com.flaviano.task.data.database.dao.TaskDao
 import com.flaviano.task.data.database.entity.TaskEntity
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.TaskType
 
 class TaskLocalDataSource(private val taskDao: TaskDao) {
 

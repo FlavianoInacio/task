@@ -1,7 +1,7 @@
 package com.flaviano.task.data.task.mapper
 
 import com.flaviano.task.data.database.entity.TaskEntity
-import com.flaviano.task.data.task.model.Task
+import com.flaviano.task.domain.task.model.Task
 
 fun TaskEntity.toDomain() = Task(
     id = id,

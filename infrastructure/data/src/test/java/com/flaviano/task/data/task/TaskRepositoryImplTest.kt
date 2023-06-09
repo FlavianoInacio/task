@@ -4,9 +4,9 @@ package com.flaviano.task.data.task
 
 import com.flaviano.task.data.database.entity.TaskEntity
 import com.flaviano.task.data.task.datasource.TaskLocalDataSource
-import com.flaviano.task.data.task.model.TaskPriority
-import com.flaviano.task.data.task.model.TaskStatus
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.TaskPriority
+import com.flaviano.task.domain.task.model.TaskStatus
+import com.flaviano.task.domain.task.model.TaskType
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,7 +27,7 @@ class TaskRepositoryImplTest : KoinTest {
         val repository = TaskRepositoryImpl(taskLocalDataSource = taskLocalDataSource)
         coEvery {
             taskLocalDataSource.getAll()
-        } returns Result.success(listOf(TaskEntity(name = "New task entity", status = TaskStatus.FINISHED, type = TaskType.BUY, priority = TaskPriority.AVERAGE)))
+        } returns Result.success(listOf(TaskEntity(name = "New task entity", status = com.flaviano.task.domain.task.model.TaskStatus.FINISHED, type = com.flaviano.task.domain.task.model.TaskType.BUY, priority = com.flaviano.task.domain.task.model.TaskPriority.AVERAGE)))
         // when
        val result =  repository.getAll()
         // then

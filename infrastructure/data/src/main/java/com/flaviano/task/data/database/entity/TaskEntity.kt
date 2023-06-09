@@ -3,10 +3,10 @@ package com.flaviano.task.data.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.flaviano.task.data.task.model.TaskPriority
-import com.flaviano.task.data.task.model.TaskProgress
-import com.flaviano.task.data.task.model.TaskStatus
-import com.flaviano.task.data.task.model.TaskType
+import com.flaviano.task.domain.task.model.TaskPriority
+import com.flaviano.task.domain.task.model.TaskProgress
+import com.flaviano.task.domain.task.model.TaskStatus
+import com.flaviano.task.domain.task.model.TaskType
 import java.time.Instant
 
 @Entity(tableName = "task")
