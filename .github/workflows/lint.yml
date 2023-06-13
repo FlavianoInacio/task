@@ -1,0 +1,25 @@
+name: Lint
+on:
+  merge_group:
+  pull_request:
+    types: [ opened, synchronize, ready_for_review ]
+jobs:
+  lint:
+    runs-on: [ "self-hosted"]
+    timeout-minutes: 10
+    if: '! github.event.pull_request.draft'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup java JDK
+        uses: actions/setup-java@v3.1.1
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - name: Setup android SDK
+        uses: android-actions/setup-android@v2
+      - run: chmod +x gradlew
+      - name: Lint
+        env:
+          TOKEN: ${{ secrets.GIT_PASS }}
+        run: ./gradlew lint
