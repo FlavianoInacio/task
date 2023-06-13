@@ -20,6 +20,4 @@ jobs:
         uses: android-actions/setup-android@v2
       - run: chmod +x gradlew
       - name: Lint
-        env:
-          TOKEN: ${{ secrets.GIT_PASS }}
         run: ./gradlew lint
