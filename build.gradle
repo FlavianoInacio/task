@@ -5,3 +5,22 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'org.jetbrains.kotlin.jvm' version '1.8.10' apply false
 }
+
+tasks.register("lint") {
+    doLast {
+        androidLintTask()
+    }
+}
+
+// Função para executar o lint
+def androidLintTask() {
+    def projectDir = rootProject.rootDir
+    def lintExecutable = 'path/to/android/sdk/tools/bin/lint' // Caminho completo para o executável do lint
+
+    exec {
+        workingDir projectDir
+        commandLine 'cmd', '/c', lintExecutable, '--text', projectDir // Adicione a opção '--text' para gerar o relatório no formato de texto
+        standardOutput = System.out // Redirecionar a saída padrão para o console do Android Studio
+        errorOutput = System.err // Redirecionar a saída de erro para o console do Android Studio
+    }
+}
