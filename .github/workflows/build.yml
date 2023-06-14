@@ -16,6 +16,5 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - run: chmod +x gradlew
       - name: Build app
         run: ./gradlew assembleDevDebug
