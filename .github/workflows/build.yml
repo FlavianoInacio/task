@@ -16,8 +16,6 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - name: Setup android SDK
-        uses: android-actions/setup-android@v2.0.10
       - run: chmod +x gradlew
       - name: Build app
         run: ./gradlew assembleDevDebug
