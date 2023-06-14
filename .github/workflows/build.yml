@@ -10,15 +10,15 @@ jobs:
     if: '! github.event.pull_request.draft'
     steps:
       - name: Clear Android setup cache
-        run: |
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_actions\android-actions\setup-android
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\_runner_file_commands
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\_runner_file_extracted
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\zulu
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_tool\Java_Zulu_jdk
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_tool
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\tools
-          rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_runner_tools
+          run: |
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_actions\android-actions\setup-android
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\_runner_file_commands
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\_runner_file_extracted
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_temp\zulu
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_tool\Java_Zulu_jdk
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_tool
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\tools
+            rmdir /S /Q C:\Users\Flavi\actions-runner\self-hosted\_runner_tools
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup java JDK
