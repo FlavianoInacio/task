@@ -12,15 +12,14 @@ tasks.register("lint") {
     }
 }
 
-// Função para executar o lint
 def androidLintTask() {
     def projectDir = rootProject.rootDir
-    def lintExecutable = 'path/to/android/sdk/tools/bin/lint' // Caminho completo para o executável do lint
+    def lintExecutable = 'path/to/android/sdk/tools/bin/lint'
 
     exec {
         workingDir projectDir
-        commandLine 'cmd', '/c', lintExecutable, '--text', projectDir // Adicione a opção '--text' para gerar o relatório no formato de texto
-        standardOutput = System.out // Redirecionar a saída padrão para o console do Android Studio
-        errorOutput = System.err // Redirecionar a saída de erro para o console do Android Studio
+        commandLine 'cmd', '/c', lintExecutable, '--text', projectDir
+        standardOutput = System.out
+        errorOutput = System.err
     }
 }
