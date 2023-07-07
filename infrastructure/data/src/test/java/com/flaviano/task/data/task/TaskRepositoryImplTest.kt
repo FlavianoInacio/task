@@ -1,4 +1,3 @@
-@file:OptIn(ExperimentalCoroutinesApi::class)
 
 package com.flaviano.task.data.task
 
@@ -13,12 +12,12 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.amshove.kluent.shouldBeTrue
 import org.amshove.kluent.shouldNotBeEmpty
-import org.junit.Assert
-
 import org.junit.Test
 import org.koin.test.KoinTest
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class TaskRepositoryImplTest : KoinTest {
+
 
     @Test
     fun `should return true when the list returned is not empty and it has success result`() = runTest {
@@ -27,7 +26,7 @@ class TaskRepositoryImplTest : KoinTest {
         val repository = TaskRepositoryImpl(taskLocalDataSource = taskLocalDataSource)
         coEvery {
             taskLocalDataSource.getAll()
-        } returns Result.success(listOf(TaskEntity(name = "New task entity", status = com.flaviano.task.domain.task.model.TaskStatus.FINISHED, type = com.flaviano.task.domain.task.model.TaskType.BUY, priority = com.flaviano.task.domain.task.model.TaskPriority.AVERAGE)))
+        } returns Result.success(listOf(TaskEntity(name = "New task entity", status = TaskStatus.FINISHED, type = TaskType.BUY, priority = TaskPriority.AVERAGE)))
         // when
        val result =  repository.getAll()
         // then
